@@ -22,3 +22,13 @@
     (is (= [2] (get-first-n-primes 1)))
     (is (= [2 3] (get-first-n-primes 2)))
     (is (= [2 3 5 7 11] (get-first-n-primes 5)))))
+
+(deftest test-multiplication-table
+  (testing "printing the multiplication table"
+    (is (= (with-out-str (-main "3"))
+           (str "\n"
+                "| * |  2 |  3 |  5 |\n"
+                "|---+----+----+----|\n"
+                "| 2 |  4 |  6 | 10 |\n"
+                "| 3 |  6 |  9 | 15 |\n"
+                "| 5 | 10 | 15 | 25 |\n")))))
