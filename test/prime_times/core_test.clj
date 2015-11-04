@@ -14,3 +14,11 @@
     (is (not (prime? 6)))
     (is (prime? 7))
     (is (prime? 115249))))
+
+(deftest test-get-first-n-primes
+  (testing "getting the first n primes"
+    (is (= [] (get-first-n-primes -1)))
+    (is (= [] (get-first-n-primes 0)))
+    (is (= [2] (get-first-n-primes 1)))
+    (is (= [2 3] (get-first-n-primes 2)))
+    (is (= [2 3 5 7 11] (get-first-n-primes 5)))))
