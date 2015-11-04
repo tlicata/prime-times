@@ -3,8 +3,10 @@
             [clojure.pprint :refer [print-table]]))
 
 (defn prime? [k]
-  (let [sqrt (first (exact-integer-sqrt k))]
-    (nil? (some #(= 0 (mod k %)) (range 2 (inc sqrt))))))
+  (if (> k 1)
+    (let [sqrt (first (exact-integer-sqrt k))]
+      (nil? (some #(= 0 (mod k %)) (range 2 (inc sqrt)))))
+    false))
 
 (defn get-first-n-primes [n]
   (take n (filter prime? (drop 2 (range)))))
