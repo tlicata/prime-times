@@ -9,7 +9,7 @@
     false))
 
 (defn get-first-n-primes [n]
-  (take n (filter prime? (drop 2 (range)))))
+  (take n (filter prime? (range))))
 
 (defn -main
   "Print out a multiplication table of the first 10 prime numbers."
