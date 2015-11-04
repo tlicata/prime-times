@@ -9,6 +9,13 @@ first 10 (or possibly _n_) prime numbers.
 lein run
 ```
 
+The script also accepts an optional argument to print out the
+multiplication table for the first _n_ prime numbers.
+
+```
+lein run 5
+```
+
 ## License
 
 Copyright © 2015 Tim Licata

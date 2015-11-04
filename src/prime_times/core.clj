@@ -13,9 +13,10 @@
 
 (defn -main
   "Print out a multiplication table of the first 10 prime numbers."
-  []
+  [& args]
   (let [star "*"
-        primes (get-first-n-primes 10)
+        n (try (Integer/parseInt (first args)) (catch Exception e 10))
+        primes (get-first-n-primes n)
         columns (concat [star] primes)
         rows (map #(merge {star %} (zipmap primes (map (partial * %) primes))) primes)]
     (print-table columns rows)))
