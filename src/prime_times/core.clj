@@ -14,5 +14,6 @@
   []
   (let [star "*"
         primes (get-first-n-primes 10)
-        columns (concat [star] primes)]
-    (print-table columns (map (fn [p] {star p}) primes))))
+        columns (concat [star] primes)
+        rows (map #(merge {star %} (zipmap primes (map (partial * %) primes))) primes)]
+    (print-table columns rows)))
